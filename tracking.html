@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking - Tamil Nadu Traditional Food</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Leaflet.js for OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script defer src="assets/js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Order Tracking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="tracking.html">Order Tracking</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li>
+                        <button id="login-btn" onclick="window.location.href='login.html'" style="display: block;">Login</button>
+                        <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="tracking-section">
+        <h2>Track Your Order</h2>
+        <p>Your food is on the way! Check the live location below.</p>
+        <div id="map"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tamil Nadu Traditional Food Delivery</p>
+    </footer>
+
+    <!-- Initialize OpenStreetMap with Real-Time Tracking -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map').setView([11.1271, 78.6569], 10); // Default Tamil Nadu view
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            var userMarker = L.marker([11.1271, 78.6569]).addTo(map);
+            userMarker.bindPopup("Your Location").openPopup();
+
+            function updateLocation(position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                
+                userMarker.setLatLng([lat, lon]).bindPopup("You are here").openPopup();
+                map.setView([lat, lon], 15); // Zoom in to user's location
+            }
+
+            function locationError(error) {
+                alert("Location access denied or unavailable.");
+            }
+
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(updateLocation, locationError, { enableHighAccuracy: true });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        });
+
+        function redirectToLogin() {
+            window.location.href = "login.html";
+        }
+
+        function logout() {
+            alert("Logged out successfully!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</body>
+</html>
+
+<div class="order-status">
+    <h2>Order Status</h2>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+    <p id="status-text">Order Received</p>
+</div>
+

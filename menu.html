@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Tamil Nadu Traditional Food</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="menu.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Our Traditional Tamil Nadu Menu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="tracking.html">Order Tracking</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li>
+                    <button id="login-btn" onclick="window.location.href='login.html'" style="display: block;">Login</button>
+                    <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+                </li>
+                
+                <li><button id="lang-switch">தமிழ் / English</button></li>
+                <script defer src="assets/js/lang.js"></script>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-container">
+        <h2>Vegetarian Dishes</h2>
+        <div class="menu-category" id="veg-menu"></div>
+
+        <h2>Non-Vegetarian Dishes</h2>
+        <div class="menu-category" id="nonveg-menu"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tamil Nadu Traditional Food Delivery</p>
+    </footer>
+</body>
+</html>

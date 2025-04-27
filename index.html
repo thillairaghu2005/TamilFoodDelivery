@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tamil Nadu Traditional Food</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="assets/js/lang.js"></script>
+    <script defer src="assets/js/home.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script defer src="assets/js/firebase-config.js"></script>
+    <script defer src="assets/js/auth.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1 data-lang="home">Tamil Nadu Traditional Food</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-lang="home">Home</a></li>
+                <li><a href="menu.html" data-lang="menu">Menu</a></li>
+                <li><a href="cart.html" data-lang="cart">Cart</a></li>
+                <li><a href="tracking.html" data-lang="tracking">Order Tracking</a></li>
+                <li><a href="reviews.html" data-lang="reviews">Reviews</a></li>
+                <li>
+                    <button id="login-btn" onclick="window.location.href='login.html'" style="display: block;">Login</button>
+                    <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+                </li>
+                <li><button id="lang-switch" data-lang="switch_lang">தமிழ் / English</button></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Experience the Authentic Taste of Tamil Nadu</h2>
+            <p>Explore a variety of traditional Tamil Nadu dishes, crafted with rich flavors and heritage.</p>
+            <a href="menu.html" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Popular Dishes -->
+    <section class="popular-dishes">
+        <h2>Popular Dishes</h2>
+        <div class="dish-container">
+            <div class="dish">
+                <img src="assets/images/idli.jpg" alt="Idli">
+                <h3>Soft Idli</h3>
+                <p>Steamed fluffy idlis served with chutney and sambar.</p>
+            </div>
+            <div class="dish">
+                <img src="assets/images/muttonbiryani.jpg" alt="Mutton Biryani">
+                <h3>Mutton Biryani</h3>
+                <p>Rich, flavorful biryani cooked with tender mutton pieces.</p>
+            </div>
+            <div class="dish">
+                <img src="assets/images/halwa.jpg" alt="Tirunelveli Halwa">
+                <h3>Tirunelveli Halwa</h3>
+                <p>Famous wheat halwa, known for its melt-in-mouth texture.</p>
+            </div>
+            <div class="dish">
+                <img src="assets/images/filtercoffee.jpg" alt="Filter Coffee">
+                <h3>Filter Coffee</h3>
+                <p>Authentic South Indian coffee brewed to perfection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Favorites -->
+    <section class="customer-favorites">
+        <h2>Customer Favorites</h2>
+        <div class="favorites-container">
+            <div class="favorite">
+                <img src="assets/images/dosa.jpg" alt="Ghee Roast Dosa">
+                <p>"The best dosa I've ever had! Crispy, buttery, and full of flavor." - Rajesh</p>
+            </div>
+            <div class="favorite">
+                <img src="assets/images/fishcurry.jpg" alt="Fish Curry">
+                <p>"Chettinad Fish Curry is simply amazing! A must-try for spice lovers." - Meena</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about">
+        <h2>Why Choose Us?</h2>
+        <p>We bring you authentic and hygienic Tamil Nadu dishes, prepared using time-honored recipes.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tamil Nadu Traditional Food Delivery</p>
+    </footer>
+
+    <!-- JavaScript for Login & Logout -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var loginButton = document.getElementById("login-btn");
+            var logoutButton = document.getElementById("logout-btn");
+
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    loginButton.style.display = "none";
+                    logoutButton.style.display = "block";
+                } else {
+                    loginButton.style.display = "block";
+                    logoutButton.style.display = "none";
+                }
+            });
+
+            window.logout = function () {
+                firebase.auth().signOut().then(() => {
+                    alert("Logged out successfully!");
+                    window.location.href = "login.html";
+                }).catch((error) => {
+                    alert(error.message);
+                });
+            };
+
+            window.redirectToLogin = function () {
+                window.location.href = "login.html";
+            };
+        });
+    </script>
+</body>
+</html>

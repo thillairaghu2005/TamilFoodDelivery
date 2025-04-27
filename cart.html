@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Tamil Nadu Traditional Food</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="cart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="tracking.html">Order Tracking</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><button id="lang-switch">தமிழ் / English</button></li>
+                <script defer src="lang.js"></script>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-container">
+        <h2>Items in Your Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (₹)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button class="checkout-btn" onclick="proceedToPayment()">Proceed to Payment</button>
+        <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tamil Nadu Traditional Food Delivery</p>
+    </footer>
+</body>
+</html>

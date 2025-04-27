@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Tamil Nadu Traditional Food</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="reviews.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="tracking.html">Order Tracking</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li>
+                    <button id="login-btn" onclick="window.location.href='login.html'" style="display: block;">Login</button>
+                    <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+                </li>
+                <li><button id="lang-switch">தமிழ் / English</button></li>
+                <script defer src="lang.js"></script>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="review-container">
+        <h2>Write a Review</h2>
+        <form id="review-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" required>
+                <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                <option value="4">⭐⭐⭐⭐ (4)</option>
+                <option value="3">⭐⭐⭐ (3)</option>
+                <option value="2">⭐⭐ (2)</option>
+                <option value="1">⭐ (1)</option>
+            </select>
+
+            <label for="comment">Review:</label>
+            <textarea id="comment" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <h2>Customer Reviews</h2>
+        <div id="reviews-list">
+            <p>No reviews yet. Be the first to review!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tamil Nadu Traditional Food Delivery</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,526 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5DC; /* Off-White Cream */
+}
+
+header {
+    background-color: #800000; /* Deep Maroon */
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700; /* Golden Yellow */
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: url('../images/banner.jpg'); /* Add a traditional Tamil Nadu food image */
+    background-size: cover;
+    color: #FFF;
+}
+
+.order-now {
+    background-color: #FF8C00; /* Warm Orange */
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.order-now:hover {
+    background-color: #FFD700; /* Golden Yellow */
+    color: #800000; /* Deep Maroon */
+}
+
+footer {
+    text-align: center;
+    background-color: #654321; /* Dark Brown */
+    color: white;
+    padding: 10px;
+}
+
+.menu-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: #FFF;
+    border: 2px solid #654321; /* Dark Brown */
+    margin: 15px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px gold;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    color: #800000; /* Deep Maroon */
+}
+
+.menu-item button {
+    background-color: #FF8C00; /* Warm Orange */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #FFD700; /* Golden Yellow */
+    color: #800000; /* Deep Maroon */
+}
+
+.cart-container {
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid #654321; /* Dark Brown */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #800000; /* Deep Maroon */
+    color: white;
+}
+
+.checkout-btn, .clear-cart-btn {
+    background-color: #FF8C00; /* Warm Orange */
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.checkout-btn:hover {
+    background-color: #FFD700; /* Golden Yellow */
+    color: #800000; /* Deep Maroon */
+}
+
+.clear-cart-btn {
+    background-color: #800000; /* Deep Maroon */
+}
+
+.clear-cart-btn:hover {
+    background-color: red;
+}
+
+.payment-container {
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFD700;
+}
+
+.tracking-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#order-status {
+    background-color: #FFD700; /* Golden Yellow */
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    font-size: 18px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid #654321; /* Dark Brown */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #800000; /* Deep Maroon */
+    color: white;
+}
+
+.review-container {
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, textarea, button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFD700;
+}
+
+#reviews-list {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+.review {
+    background-color: #F5F5DC;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Popular Dishes */
+.popular-dishes {
+    text-align: center;
+    padding: 50px;
+    background-color: #F5F5DC;
+}
+
+.popular-dishes h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.dish-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dish {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.dish img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.dish h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.dish:hover {
+    transform: scale(1.05);
+}
+
+/* Customer Favorites */
+.customer-favorites {
+    text-align: center;
+    padding: 50px;
+    background-color: #FFD700;
+}
+
+.customer-favorites h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.favorites-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.favorite {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.favorite img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.favorite p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.favorite:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFD700; /* Golden Yellow */
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #FFD700; /* Golden Yellow */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); /* Stronger shadow for better readability */
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #FF8C00; /* Warm Orange for better contrast */
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #800000;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #228B22; /* Rich Green */
+    color: #FFD700;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.9);
+}
+
+/* Button Hover Effects */
+.btn, button {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover, button:hover {
+    background-color: #FFD700; /* Golden Yellow */
+    color: #800000; /* Deep Maroon */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Image Hover Effects */
+img {
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Card Hover Effects */
+.dish, .favorite {
+    transition: transform 0.3s ease-in-out;
+}
+
+.dish:hover, .favorite:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Navbar Hover */
+nav ul li a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Gold Shimmer Animation */
+@keyframes shimmer {
+    0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+.shimmer-effect {
+    animation: shimmer 1.5s infinite alternate;
+}
+
+.dish img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.dish:hover img {
+    transform: scale(1.1);
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #800000;
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: #228B22;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+#status-text {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5DC; /* Off-white background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
